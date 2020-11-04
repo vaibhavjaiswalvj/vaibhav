@@ -25,6 +25,24 @@
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
    </head>
+   <style >
+     h1{
+      margin-top: -20px;
+      margin-bottom: -20px;
+     }
+    #problem{
+      font-size: 1.3em;
+      margin-bottom: -20px;
+    }
+    .photo-home{
+      margin-left: 20px;
+      margin-right: auto;
+      width: 90%;
+    }
+    .heading-inner{
+      font-size: 1.4em;
+    }
+   </style>y
    <body>
    
    <!-- Start wrapper -->
@@ -51,40 +69,6 @@
                 </div>
                  
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="index.html">Home1</a>
-                            </li>
-                            <li>
-                                <a href="index-work.html">Home2</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                       <a href="about.html">About</a>
-                    </li>
-                    <li>
-                       <a href="services.html">Services</a>
-                    </li>
-                    <li>
-                       <a href="collection.html">Collection</a>
-                    </li>
-                    <li>
-                       <a  href="resume.html">Resume</a>
-                    </li>
-                    <li>
-                       <a href="news.html">News</a>
-                    </li>
-                    <li class="active">
-                       <a href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div> -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
@@ -118,22 +102,147 @@
          <!-- End nav -->
 
   <div class="middle">
-    <h1>COMING SOON</h1>
-    <h1>Few days left</h1>
+    <h1>Project Proposal (Virtual Try-on Problem)</h1>
+    <!-- <h1>Few days left</h1> -->
   </div>
-         <!-- Start margin -->
-         
-         <!-- End margin -->
-         
-           
-         <!-- Google map (adress on map can be changed in app.js file) -->
-<!--          <div class="col-md-12 wow fadeIn" data-wow-delay="0.1s">
-         <div id="map-canvas"></div>       
-         </div> -->
-         <!-- End google map -->
-         
+  <div class="proposal">
+    <h2> Team Members: Vaibhav, Prakhar, Anirudha, Pratyush</h2>
+    <h2 id="problem">
+      <strong >Our problem statement: </strong> Despite the convenience online fashion shopping provides, people are concerned about how a particular fashion item in an image would look on them. Thus, allowing consumers to virtually try on clothes will not only enhance their shopping experience, transforming the way people shop for clothes, but also save cost for retailers.
+    </h2>
+    <h2 id="problem">
+      <strong>Our goal: </strong>To build an ML model Image-based virtual try-on systems for fitting a new in-shop cloth into a person image using the ideas/help of previous research papers. Our main focus will be on Shirts, T-shirts or any upper-wear of men or women.
+    </h2>
+    <h2 style="font-family:Comic Sans MS, cursive, sans-serif; margin-bottom: -40px; margin-top: 80px;" id="problem" >
+      <strong>Which research papers are we reffering to? <br> How better it is from the previous researches?</strong>
+    </h2>
+  </div>
 
-         <!-- Start footer -->
+
+          <div class="box-home col-md-4 col-xs-offset-1">
+            <h3 class="heading-inner">Research paper reference</h3>
+            <div class="hr"></div>
+               <h3>
+               <span class="text-left">Many research papers have been published in the last 3-4 years. Many of them were able to solve the issue but 95% of them were not able to preserve the characterstics of clothes like Collar shape, Hand posture, Buttons, Printed designs etc <br><br>The research paper on <strong>VITON</strong> was able to build a successful model but wasn't able to preserve the small characterstics. Thus, we use <strong>CPVTON</strong> model for getting apprecible results in the same.</span> 
+               
+               </h3>
+          </div>
+          <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+
+             <img src="img/viton.png" alt="img" class="photo-home"/> 
+          </div>
+
+
+      <h2 id="problem" >
+        <strong>An implicit assumption taken into account while we prepare the ML model: </strong>In the image-to-image translation tasks, the input and output are roughly aligned with each other and they represent the same underlying structure
+      </h2>
+
+        <div class="box-home col-md-5 col-xs-offset-1">
+            <h3 class="heading-inner">Input Datasets</h3>
+            <div class="hr"></div>
+               <h3>
+               <p style="text-align: center;">Training Dataset: 14221; Validation on: 2032</p> 
+               <img src="img/input.png" alt="img" class="photo-home" style="margin-bottom: -10px; margin-top: 0px"/> 
+               </h3>
+          </div>
+
+          <div class="box-home col-md-5 col-xs-offset-0">
+            <h3 class="heading-inner"  >Output from ML Model</h3>
+            <div class="hr"></div>
+               <h3>
+               <p style="text-align: center;">Property of Image: Fixed resolution 256×192</p> 
+               <img src="img/output.png" alt="img" class="photo-home" style="margin-bottom: 68px; margin-top: 20px"/>/> 
+               </h3>
+          </div>
+
+
+          <div class="col-md-12 wow fadeIn" >
+                  <!-- <h1>Hat design</h1> -->
+                  
+            <h1 style="font-size: 1.8em; margin-top: 100px;">
+              An overview of our CP-VTON 
+            </h1><br><br>
+            <h1  style="font-size: 1.5em; font-weight: normal;  margin-bottom: -50px">It contains 2 main modules, namely: a) Geometric Matching Module and b) Try-On Module</h1>
+
+
+          </div>
+            
+
+
+      <div class="box-home col-md-3 col-xs-offset-1">
+            <h3 class="heading-inner">Geometric Matching Module (GMM):</h3>
+            <div class="hr"></div>
+               <h3>
+               <p style="text-align: center;">The in-shop clothes c and input image representation p are aligned, via a learnable matching module ,for transforming the clothes into fitting the body shape of the target person</p> 
+              </h3>
+          </div>
+
+         <div class="col-md-7 wow fadeIn" data-wow-delay="0.1s">
+             <img src="img/gmm.png" alt="img" class="photo-home" style="margin-bottom: -80px; margin-top: 120px; width: 100%;" /> 
+         </div>
+
+
+
+            <div class="col-md-12 wow fadeIn" >
+                  <!-- <h1>Hat design</h1> -->
+                  
+            <h1 style="font-size: 1.8em; margin-top: 80px; margin-bottom: -60px;">
+              Major details of GMM 
+            </h1>
+          <div class="box-home col-md-6 col-xs-offset-1">
+            <h3 class="heading-inner">Person Representation (p):</h3>
+            <div class="hr"></div>
+               <h3>
+               <p style="text-align: center;"> <strong>Pose heatmap:</strong> A 18-channel feature map with each channel corresponding to one human pose keypoint, drawn as an 11 × 11 white rectangle. <br> <strong> Body shape:</strong>  A 1-channel feature map of a blurred binary mask that roughly covering different parts of human body. <br> <strong>Reserved regions:</strong> A RGB image that contains the reserved regions to maintain the identity of a person, including face and hair</p> 
+              </h3>
+            <h3 class="heading-inner">Thin Plate Spline (TPS):</h3>
+            <div class="hr"></div>
+            <h3>
+               <p style="text-align: center;">
+               A convolutional neural network(CNN) designed to estimate a TPS transformation between in-shop clothes and the target image without any explicit correspondences of interest points</p> 
+              </h3>
+
+          </div>
+
+         <div class="col-md-4 wow fadeIn" data-wow-delay="0.1s">
+             <img src="img/person_rep.png" alt="img" class="photo-home" style="margin-bottom: -80px; margin-top: 220px; width: 120%;" /> 
+         </div>
+          </div>
+
+
+
+      <div class="col-md-12 wow fadeIn" >
+          <h1 style="font-size: 1.8em; margin-top: 30px; margin-bottom:-10px;">GMM consists of four parts</h1>    
+          <h2 style="font-size: 1.2em;">(1) Two networks for extracting high-level features of p and c respectively. <br>(2) A correlation layer to combine two features into a single tensor as input to the regressor network. <br>(3) The regression network for predicting the spatial transformation parameters θ. <br>(4) A Thin-Plate Spline (TPS) transformation module T for warping an image into the output c^ = Tθ(c).
+      </h2>
+      </div>
+
+
+      <div class="box-home col-md-3 col-xs-offset-1" >
+            <h3 class="heading-inner" >Try-On Module:</h3>
+            <div class="hr"></div>
+               <h3 >
+               <p style="text-align: center; ">Its purpose is to improve the boundary artifacts of warped clothes. It generates a composition mask M and a rendered person Ir. The final results Io is composed by warped clothes cˆ and the rendered person Ir with the composition mask M</p> 
+              </h3>
+          </div>
+
+         <div class="col-md-7 wow fadeIn" data-wow-delay="0.1s">
+             <img src="img/tryon.png" alt="img" class="photo-home" style="margin-bottom: -80px; margin-top: 120px; width: 100%;" /> 
+         </div>
+
+
+      <div class="col-md-12 wow fadeIn" >
+          <h1 style="font-size: 2em; margin-top: 30px; margin-bottom:-10px;">Our Work Plan</h1>    
+          <h2 style="font-size: 1.2em; text-align: left;"><strong>Phase I:</strong> a) We plan to do a deep dive study of Deep Learning models involving CNN, GANs, U-net (Up-sampling + Down-sampling). These are the not easy to understand pre-requisite parts of this project upon which the main module is based on. <br>
+            b) Along with that we are trying to work on Input datasets which we will have to web scrape from numerous website on internet (taking care of technical details needed for model). This will also involve data pre-processing and the datasets have to be extracted in thousands of numbers.<br><br>
+            <strong>Phase II:</strong> After getting the input datasets, we will work on the pre-requisite inputs for ML module. They are Person Representation (p) (consisting of Pose heatmap, Body shape, Reserved regions), Composition Mask (M), Cropped Image of cloth wore by person. <br><br>
+            <strong>Phase III:</strong> After getting above mentioned 3 things, we will work on the main modules i.e. a) Geometric Matching Module, and b) Try-on Module.<br><br>
+            <strong>Phase IV:</strong> When both the modules will be ready to go, we will start the training on large datasets and then testing of the obtained model.</h2>
+      </div>
+
+
+
+
          <div class="footer col-md-6 col-xs-offset-3">
              <h5>@2020 Vaibhav Jaiswal | Template Credit: PATSY DOHERTY
                  <a href="https://www.facebook.com/vaibhav.jaiswal.gkp/"><i class="fa fa-facebook fa-2x icon1"></i></a>
