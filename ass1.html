@@ -193,7 +193,7 @@
             <h3 class="heading-inner">Person Representation (p):</h3>
             <div class="hr"></div>
                <h3>
-               <p style="text-align: center;"> <strong>Pose heatmap:</strong> A 18-channel feature map with each channel corresponding to one human pose keypoint, drawn as an 11 × 11 white rectangle. <br> <strong> Body shape:</strong>  A 1-channel feature map of a blurred binary mask that roughly covering different parts of human body. <br> <strong>Reserved regions:</strong> A RGB image that contains the reserved regions to maintain the identity of a person, including face and hair</p> 
+               <p style="text-align: left;"> <strong>Pose heatmap:</strong> A 18-channel feature map with each channel corresponding to one human pose keypoint, drawn as an 11 × 11 white rectangle. <br> <strong> Body shape:</strong>  A 1-channel feature map of a blurred binary mask that roughly covering different parts of human body. <br> <strong>Reserved regions:</strong> A RGB image that contains the reserved regions to maintain the identity of a person, including face and hair</p> 
               </h3>
             <h3 class="heading-inner">Thin Plate Spline (TPS):</h3>
             <div class="hr"></div>
@@ -213,7 +213,7 @@
 
       <div class="col-md-12 wow fadeIn" >
           <h1 style="font-size: 1.8em; margin-top: 30px; margin-bottom:-10px;">GMM consists of four parts</h1>    
-          <h2 style="font-size: 1.2em;">(1) Two networks for extracting high-level features of p and c respectively. <br>(2) A correlation layer to combine two features into a single tensor as input to the regressor network. <br>(3) The regression network for predicting the spatial transformation parameters θ. <br>(4) A Thin-Plate Spline (TPS) transformation module T for warping an image into the output c^ = Tθ(c).
+          <h2 style="font-size: 1.2em; text-align: left; margin-left: 70px;">(1) Two networks for extracting high-level features of p and c respectively. <br>(2) A correlation layer to combine two features into a single tensor as input to the regressor network. <br>(3) The regression network for predicting the spatial transformation parameters θ. <br>(4) A Thin-Plate Spline (TPS) transformation module T for warping an image into the output c^ = Tθ(c).
       </h2>
       </div>
 
@@ -222,7 +222,7 @@
             <h3 class="heading-inner" >Try-On Module:</h3>
             <div class="hr"></div>
                <h3 >
-               <p style="text-align: center; ">Its purpose is to improve the boundary artifacts of warped clothes. It generates a composition mask M and a rendered person Ir. The final results Io is composed by warped clothes cˆ and the rendered person Ir with the composition mask M</p> 
+               <p style="text-align: center; color: #898989">Its purpose is to improve the boundary artifacts of warped clothes. It generates a composition mask M and a rendered person Ir. The final results Io is composed by warped clothes cˆ and the rendered person Ir with the composition mask M</p> 
               </h3>
           </div>
 
