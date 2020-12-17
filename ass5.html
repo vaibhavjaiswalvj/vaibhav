@@ -90,10 +90,14 @@
 
   <div class="col-md-12 wow fadeIn" >
           <h2 style="font-family: Comic Sans MS, cursive, sans-serif; font-size: 2em; text-align: left;color: #4f4d47; margin-top: 10px; margin-bottom:-20px;">New datasets and Pre-Processing</h2>    
-          <h2 style="font-size: 1.2em; text-align: left;">I started with learning some basic syntax from <a href="free-css.com" style="color: #4f4d47;">free-css.com</a> website and tried using them first. I chose HTML and CSS for the designing. A horizontal navigation bar has been used in all the pages and a side bar, as shown here, is used in the assignment page</h2>
+          <h2 style="font-size: 1.2em; text-align: left;">The research papers and online repos provided good enough data to train the model but they were of a particualr type. If tested on random images it would then it might not give appropiate output. <br> Spreadshirts.com and redwolf.in were the websites were we found one of the 2 datasets i.e. only 2D photo of T-shirt or shirt. We are trying to collect 500-1000 in number so that we can test the model once it is trained.<!-- <a href="free-css.com" style="color: #4f4d47;">free-css.com</a> -->
+          <br>
+          <br>
+          Apart from the web scraping we had to also change the properties of the scraped images according to the model requirement, where we used data pre-processing. The depth of image and dimesions were to be kept to -bit and 256x192 pixels respectively.
+          </h2>
 
            
-          <div class="box-home col-md-2 col-xs-offset-1">
+          <div class="box-home col-md-3 col-xs-offset-1">
             <h3 class="heading-inner" style="font-weight: 300;" >Changing properties of image</h3>
             <div class="hr"></div>
                <h3 style="text-align: center;">
@@ -108,6 +112,78 @@
 
 
 
+
+
+
+            <div class="col-md-12 wow fadeIn" >
+          <h2 style="font-family: Comic Sans MS, cursive, sans-serif; font-size: 2em; text-align: left;color: #4f4d47; margin-top: 10px; margin-bottom:-20px;">Initial Approach for Pose Estimation</h2>    
+          <h2 style="font-size: 1.2em; text-align: left;">Human Pose Estimation is a core problem for understanding of people in images and videos. In Single Person Pose Estimation, the problem is simplified by assuming the image has only one person. Multi Person Pose Estimation is a more difficult because there are multiple people in an image.
+          <br>
+          <br>
+          A common approach is to follow a two-step framework which uses a human detector and solve the pose estimation for each human. 
+          <br>
+          First, the image is passed through a baseline network to extract feature maps(F). 
+          <br>
+Then, the feature maps are processed with multiple stages CNN to generate: 
+<br>1) a set of Part Confidence Maps 
+<br>
+ 2) a set of Part Affinity Fields (PAFs)
+ <br>
+Part Confidence Maps: a set of 2D confidence maps S for body part locations. Each joint location has a map.
+
+          </h2>
+
+          <div class="box-home col-md-3 col-xs-offset-1">
+            <h3 class="heading-inner" style="font-weight: 300;" >Pose Estimation</h3>
+            <div class="hr"></div>
+               <h3 style="text-align: center;">
+               <span class="text-left">Explaination of single person pose estimation</span> 
+               
+               </h3>
+          </div>
+          <div class="col-md-7 wow fadeIn" data-wow-delay="0.1s">
+
+             <img src="img/Picture133.png" alt="img" class="photo-home" style="margin-top: 100px;" /> 
+          </div>
+
+
+  </div>
+
+              <div class="col-md-12 wow fadeIn" >
+          <h2 style="font-family: Comic Sans MS, cursive, sans-serif; font-size: 2em; text-align: left;color: #4f4d47; margin-top: 10px; margin-bottom:-20px;">Multi-Person Parsing using PAFs</h2>    
+          <h2 style="font-size: 1.2em; text-align: left;">In this section, we give an overview of the greedy algorithm which is used to parse poses of multiple people from confidence maps and part affinity fields.
+          <br>
+          <br>
+          The parsing process can be summarized into three steps:<br>
+Step 1: Find all joints locations using the confidence maps.
+<br>
+Step 2: Find which joints go together to form limbs using the part affinity fields and joints in step 1.
+<br>
+Step 3: Associate limbs that belong to the same person and get the final list of human poses.
+
+
+          </h2>
+
+
+
+          <div class="box-home col-md-4 col-xs-offset-1">
+            <h3 class="heading-inner" style="font-weight: 300;" >Loss Function</h3>
+            <div class="hr"></div>
+               <h3 style="text-align: center;">
+               <span class="text-left">In order for the network to learn how to generate the best sets of S and L, the authors applies two loss functions at the end of each stage, one at each branch respectively. The paper uses a standard L2 loss between the estimated predictions and ground truth maps and fields. Moreover, the authors has added some weight to the loss functions to address a practical issue that some datasets do not completely label all people. The loss functions at a particular stage t are given as follows.
+</span> 
+               
+               </h3>
+          </div>
+          <div class="col-md-7 wow fadeIn" data-wow-delay="0.1s">
+
+             <img src="img/Picture134.png" alt="img" class="photo-home" style="margin-top: 200px;" /> 
+          </div>
+
+
+  </div>
+
+
           <div class="box-home col-md-2 col-xs-offset-1">
             <h3 class="heading-inner" style="font-weight: 300;" >Slides</h3>
             <div class="hr"></div>
@@ -120,96 +196,6 @@
             <iframe src="https://docs.google.com/presentation/d/19fBHRB5ddonxBin5Ond2rvBRtPaaiIRrHcUJiu9agps/embed?start=true&loop=true&delayms=3000" frameborder="0" width="720" height="520" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
              <!-- <img src="img/Picture132.png" alt="img" class="photo-home"/>  -->
           </div>
-
-          <div class="box-home col-md-3 col-xs-offset-1">
-            <h3 class="heading-inner" style="font-weight: 300;" >Footer Icons</h3>
-            <div class="hr"></div>
-               <h3>
-               <span class="text-left">Facebook, Instagram, Twitter</span> 
-               
-               </h3>
-          </div>
-          <div class="col-md-7 wow fadeIn" data-wow-delay="0.1s">
-
-             <img src="img/icons.png" alt="img" class="photo-home" style="margin-top: 100px;" /> 
-          </div>
-
-
-  </div>
-
-          <div class="col-md-12 wow fadeIn" >
-                  <!-- <h1>Hat design</h1> -->
-                  
-            <h1 style="font-size: 1.8em; margin-top: 100px; margin-bottom: -30px;">
-              Contact Form (automated with google sheets script code)
-            </h1><!-- <br><br>
-            <h1  style="font-size: 1.5em; font-weight: normal;  margin-bottom: -50px">It contains 2 main modules, namely: a) Geometric Matching Module and b) Try-On Module</h1> -->
-          </div>
-
-        <div class="box-home col-md-5 col-xs-offset-1">
-            <h3 class="heading-inner" style="font-size: 1.4em;">Step 1) Deploying code in Script Editor of Google Sheet</h3>
-            <div class="hr"></div>
-               <h3>
-                 <img src="img/sheet_script.png" alt="img" class="photo-home" style="margin-bottom: 0px; margin-top: 0px"/> 
-               </h3>
-          </div>
-
-          <div class="box-home col-md-5 col-xs-offset-0">
-            <h3 class="heading-inner" style="font-size: 1.4em;">Step 2) Adding script code in html file</h3>
-            <div class="hr"></div>
-               <h3>
-               
-               <img src="img/html_script.png" alt="img" class="photo-home" style="margin-bottom: 100px; margin-top: 100px"> 
-               </h3>
-          </div>
-<br>
-
-
-  <!--     <h2  >q
-      </h2> -->
-          <div class="box-home col-md-5 col-xs-offset-1">
-            <h3 class="heading-inner" style="font-size: 1.4em;">Step 3) Sample of Webpage after deploying</h3>
-            <div class="hr"></div>
-               <h3>
-                 <img src="img/webpage_script.png" alt="img" class="photo-home" style="margin-bottom: 0px; margin-top: 0px"/> 
-               </h3>
-          </div>
-
-          <div class="box-home col-md-5 col-xs-offset-0">
-            <h3 class="heading-inner" style="font-size: 1.4em;">Step 4) Sample of response recieved in google sheet</h3>
-            <div class="hr"></div>
-               <h3>
-               
-               <img src="img/response_script.png" alt="img" class="photo-home" style="margin-bottom: 0px; margin-top: 0px"> 
-               </h3>
-          </div>
-
-
-          <div class="col-md-12 wow fadeIn" >
-                  <!-- <h1>Hat design</h1> -->
-                  
-            <h1 style="font-size: 1.8em; margin-top: 100px; margin-bottom: -30px;">
-              Hosting website on Github
-            </h1>
-          </div>
-
-          <div class="box-home col-md-5 col-xs-offset-1">
-            <h3 class="heading-inner" style="font-size: 1.4em;">Creating new project and repository on Github </h3>
-            <div class="hr"></div>
-               <h3>
-                 <img src="img/repo_git.png" alt="img" class="photo-home" style="margin-bottom: 0px; margin-top: 0px"/> 
-               </h3>
-          </div>
-
-          <div class="box-home col-md-5 col-xs-offset-0">
-            <h3 class="heading-inner" style="font-size: 1.4em;">Using Github desktop app to upload HTML,CSS and image files</h3>
-            <div class="hr"></div>
-               <h3>
-               
-               <img src="img/app_git.png" alt="img" class="photo-home" style="margin-bottom: 0px; margin-top: 0px"> 
-               </h3>
-          </div>
-
 
 
          <div class="footer col-md-6 col-xs-offset-3">
